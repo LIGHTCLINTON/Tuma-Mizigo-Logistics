@@ -103,6 +103,7 @@ nav .fa-solid{
     }
     .nav-links ul li{
         display: block;
+        margin: 20px 0;
     }
     .nav-links{
         position:absolute;
@@ -123,7 +124,11 @@ nav .fa-solid{
         cursor: pointer;
     }
     .nav-links ul{
-        padding: 30px;
+        flex-direction: column;
+        padding: 30px 0 0 20px;
+    }
+    body {
+        overflow-x: hidden;
     }
 }
 
@@ -253,6 +258,25 @@ h3{
 .services-list div:hover{
     background: #f44336;
     transform: translateY(-10px);
+}
+@media (max-width: 700px) {
+    .services-list {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0;
+        align-items: stretch;
+    }
+    .services-list > div {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 0 16px 0;
+        box-sizing: border-box;
+    }
+    .service-icon {
+        width: 48px;
+        height: 48px;
+    }
 }
 /*--------testimonials------*/
 /* ...existing code... */
@@ -518,4 +542,55 @@ h3{
     grid-gap:40px;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+@media (max-width: 700px) {
+    /* Make containers stack vertically */
+    .container, .about .container, .services-list {
+        flex-direction: column !important;
+        gap: 16px;
+        padding: 0 8px;
+    }
+
+    /* Make service/about cards full width */
+    .about-house,
+    .services-list > div,
+    .testimonials-col {
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 16px 0;
+    }
+
+    /* Resize images/icons */
+    .service-icon,
+    .about-house img,
+    .testimonials-col img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Adjust text sizes */
+    h1, .sub-title {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 14px;
+    }
+
+    /* Navigation adjustments */
+    .nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Footer adjustments */
+    .footer, .footer-copyright, .copyright {
+        padding: 10px 0;
+        font-size: 13px;
+    }
 }
